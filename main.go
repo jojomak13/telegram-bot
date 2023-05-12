@@ -3,12 +3,13 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
 
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
 func main() {
-	bot, err := tgbotapi.NewBotAPI("5660364356:AAFQE51uUghxdGcJ7fL0FCV7cy5Su6pZjDI")
+	bot, err := tgbotapi.NewBotAPI(os.Getenv("API_TOKEN"))
 
 	if err != nil {
 		log.Panic("Cannot initialize telegram bot")
